@@ -1,11 +1,13 @@
 class BonusDrink
   def self.total_count_for(amount)
-    num = amount
-    drink_ary = [num]
-    while num >= 3
-      drink_ary << num / 3
-      num = num / 3 + num % 3
+    drinking_numbers = [amount]
+    empty_num = amount
+    while empty_num >= 3
+      bonus_drink = empty_num / 3
+      left_empty_bottol = empty_num % 3
+      drinking_numbers << bonus_drink
+      empty_num = bonus_drink + left_empty_bottol
     end
-    drink_ary.sum
+    drinking_numbers.sum
   end
 end
